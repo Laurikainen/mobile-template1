@@ -1,6 +1,12 @@
 <ion-view title="What's Here?">
     <ion-content class="padding">
-        <table class="table table-striped">
+                <div class="card" ng-show="q.question == 'start'">
+            <h2>The Quiz is about to start!</h2>
+            <h4>First correct earns 5 points!</h4>
+            <h4>Any correct earns 2 points!</h4>
+        </div>
+		
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -9,19 +15,11 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="user in leaders">
-					<th>{{user.name}}</th>
-					<td>{{user.points}}</td>
+					<th>First</th>
+					<td>Second</td>
 				</tr>
 			</tbody>
 		</table>
-
-
-        <div class="card" ng-show="q.question == 'start'">
-            <h2>The Quiz is about to start!</h2>
-            <h4>First correct earns 5 points!</h4>
-            <h4>Any correct earns 2 points!</h4>
-        </div>
-
 
     </ion-content>
 </ion-view>
