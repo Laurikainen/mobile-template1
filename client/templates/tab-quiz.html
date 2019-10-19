@@ -1,65 +1,19 @@
 <ion-view title="What's Here?">
     <ion-content class="padding">
-
-        <div class="" ng-show="q.question == 'start'">
-            <div class="item item-text-wrap">
-                <h3>{{q.question}}</h3>
-            </div>
-
-            <div class="" ng-if="!hasAnswered()">
-                <div class="list">
-                    <a class="item item-icon-left" ng-repeat="choice in q.answers" ng-value="$index" ng-click="saveChoice($index)">
-                        <h2>{{ choice }}</h2>
-                    </a>
-                </div>
-            </div>
-
-            <div class="" ng-if="hasAnswered() && !answerIndex">
-                <div class="list">
-                    <a class="item item-icon-left" ng-repeat="choice in q.answers">
-                        <h2>{{ choice }}</h2>
-                    </a>
-                </div>
-            </div>
-
-            <div class="" ng-if="hasAnswered() && answerIndex">
-                <div class="list">
-                    <a class="item item-icon-left" ng-repeat="choice in q.answers">
-                        <i class="icon ion-checkmark balanced" ng-show="isCorrectAnswer($index)"></i>
-                        <h2 ng-class='{"balanced": userAnswerCorrect($index), "assertive": userAnswerWrong($index)}'>{{ choice }}</h2>
-                    </a>
-                </div>
-
-                <a class="item item-icon-left item-text-wrap" ng-show="correct_answer">
-                    <i class="icon ion-ios7-star energized"></i>
-                    <h2 class="energized"><strong>{{correct_answer.user.name}}</strong> answered correctly first!</h2>
-                </a>
-
-            </div>
-        </div>
-
-        <div ng-show="show_leaders">
-            <br>
-            <div class="list">
-                <div class="item item-divider">Leaderboard</div>
-                <div class="item" ng-repeat="user in leaders">{{user.points}}pts - {{user.name}}
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Score</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="user in leaders">
-								<th>Data</th>
-								<td>Data</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-        </div>
+        <table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Score</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in leaders">
+					<th>{{user.name}}</th>
+					<td>{{user.points}}</td>
+				</tr>
+			</tbody>
+		</table>
 
 
         <div class="card" ng-show="q.question == 'start'">
