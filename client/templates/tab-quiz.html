@@ -1,4 +1,4 @@
-<ion-view title="Live Quiz">
+<ion-view title="What's Here?">
     <ion-content class="padding">
 
         <div class="" ng-show="q.question != 'start' && q.question != 'end'">
@@ -43,12 +43,24 @@
             <div class="list">
                 <div class="item item-divider">Leaderboard</div>
                 <div class="item" ng-repeat="user in leaders">{{user.points}}pts - {{user.name}}</div>
-            </div>
+				<table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in leaders">
+                            <th>Data</th>
+                            <td>Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+			
+			</div>
         </div>
 
-        <div class="card" ng-show="q.question == 'end'">
-            <h1>Thanks for playing!</h1>
-        </div>
 
         <div class="card" ng-show="q.question == 'start'">
             <h2>The Quiz is about to start!</h2>
@@ -58,9 +70,4 @@
 
 
     </ion-content>
-
-        <div class="bar bar-footer bar-balanced" style="bottom:50px" ng-show="is_admin">
-            <div class="title"><a href="/admin.html" target="_blank">Open Admin Page</a></div>
-            
-        </div>
 </ion-view>
