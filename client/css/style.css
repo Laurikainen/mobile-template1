@@ -40,9 +40,4 @@
     margin-bottom: 0;
 }
 
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-
 #more {display: none;}
